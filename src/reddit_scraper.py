@@ -3,7 +3,6 @@ import pandas as pd
 import time
 
 class RedditScraper:
-    """scrapes reddit using public json endpoints, no api key needed. the reddit app creation page wasn't working lol"""
 
     def __init__(self):
         # reddit requires a proper user-agent or it blocks you
