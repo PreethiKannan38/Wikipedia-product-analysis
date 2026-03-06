@@ -1,9 +1,8 @@
 import requests
 import pandas as pd
-from datetime import datetime
+import time
 
 class WikipediaAPIClient:
-    """A client to interact with the Wikimedia Pageviews API."""
     BASE_URL = "https://wikimedia.org/api/rest_v1/metrics/pageviews"
 
     def __init__(self, user_agent="WikipediaAnalysisBot/1.0 (contact: your-email@example.com)"):
@@ -12,58 +11,50 @@ class WikipediaAPIClient:
             "Accept": "application/json"
         }
 
-
-        """Fetch aggregate pageviews for a specific project.
-        Args:
-            project (str): Project name, e.g., 'en.wikipedia.org'
-            start (str): Start date in YYYYMMDD format
-            end (str): End date in YYYYMMDD format
-            access (str): 'all-access', 'desktop', 'mobile-app', 'mobile-web'
-            agent (str): 'all-agents', 'user', 'spider', 'bot'
-            granularity (str): 'daily', 'monthly'
-        Returns:
-            pd.DataFrame: Dataframe containing timestamps and pageview counts."""
-    def get_aggregate_pageviews(self, project, start, end, access="all-access", agent="user", granularity="daily"):
+    def get_aggregate_pageviews(self, project, start, end, access="all-access", agent="user", granularity="monthly"):
+        """fetch total pageviews for a wikipedia project over a date range.
+        start/end format is YYYYMMDD. granularity can be daily or monthly."""
         url = f"{self.BASE_URL}/aggregate/{project}/{access}/{agent}/{granularity}/{start}/{end}"
         response = requests.get(url, headers=self.headers)
         if response.status_code != 200:
-            print(f"Error fetching aggregate data: {response.status_code}")
-            print(response.text)
+            print(f"error {response.status_code}: {response.text}")
             return None
         data = response.json()
         df = pd.DataFrame(data["items"])
         df["timestamp"] = pd.to_datetime(df["timestamp"], format="%Y%m%d%H")
         return df[["timestamp", "views"]]
 
-    def get_article_pageviews(self, project, article, start, end, access="all-access", agent="user", granularity="daily"):
-        """Fetch pageviews for a specific article.
-        Args:
-            project (str): Project name, e.g., 'en.wikipedia.org'
-            article (str): Article title
-            start (str): Start date in YYYYMMDD format
-            end (str): End date in YYYYMMDD format
-            access (str): 'all-access', 'desktop', 'mobile-app', 'mobile-web'
-            agent (str): 'all-agents', 'user', 'spider', 'bot'
-            granularity (str): 'daily', 'monthly'
-        Returns:
-            pd.DataFrame: Dataframe containing timestamps and pageview counts."""
-        # Article titles in URL must be percent-encoded if they have spaces,
-        # but the API usually expects underscores.
-        article = article.replace(" ", "_")
-        url = f"{self.BASE_URL}/per-article/{project}/{access}/{agent}/{article}/{granularity}/{start}/{end}"
+    def get_article_pageviews(self, article, start, end, project="en.wikipedia.org", access="all-access", granularity="monthly"):
+        """fetch monthly pageviews for a specific wikipedia article.
+        article should be URL-encoded, e.g. 'Artificial_intelligence'.
+        returns a dataframe with timestamp, article, and views columns."""
+        url = f"{self.BASE_URL}/per-article/{project}/{access}/user/{article}/{granularity}/{start}/{end}"
         response = requests.get(url, headers=self.headers)
         if response.status_code != 200:
-            print(f"Error fetching data for {article}: {response.status_code}")
+            print(f"error fetching {article}: {response.status_code}")
             return None
         data = response.json()
-        if "items" not in data:
-            return None
         df = pd.DataFrame(data["items"])
         df["timestamp"] = pd.to_datetime(df["timestamp"], format="%Y%m%d%H")
-        return df[["timestamp", "views"]]
+        df["article"] = article
+        return df[["timestamp", "article", "views"]]
+
+    def get_multiple_articles(self, articles, start, end, granularity="monthly"):
+        """fetch pageviews for a list of articles and combine into one dataframe."""
+        all_dfs = []
+        for article in articles:
+            print(f"  fetching {article}...")
+            df = self.get_article_pageviews(article, start, end, granularity=granularity)
+            if df is not None:
+                all_dfs.append(df)
+            time.sleep(0.5)
+        if not all_dfs:
+            return pd.DataFrame()
+        return pd.concat(all_dfs, ignore_index=True)
+
 
 if __name__ == "__main__":
     client = WikipediaAPIClient()
-    df = client.get_aggregate_pageviews("en.wikipedia.org", "20230101", "20230131")
+    df = client.get_article_pageviews("Artificial_intelligence", "20220101", "20240101")
     if df is not None:
         print(df.head())

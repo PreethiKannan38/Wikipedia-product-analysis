@@ -1,0 +1,8 @@
+﻿dominant_topic,topic_label,n_posts,avg_confidence,pre_pct,post_pct,median_score,median_comments,roberta_mean
+1,Technical NLP Research,21,0.63,52.38,47.62,8.0,5.0,-0.095
+2,Fact-Checking AI vs Current Events,71,0.67,4.23,95.77,11.0,16.0,-0.352
+3,Societal Impact of AI,27,0.7,14.81,85.19,73.0,21.0,-0.185
+4,AI Research & AGI Discourse,647,0.73,32.3,67.7,8.0,8.0,0.071
+5,ChatGPT Interactions & Wikipedia Accuracy,388,0.7,5.93,94.07,3.0,8.0,-0.281
+6,Deep Technical ML Implementation,34,0.67,35.29,64.71,24.5,14.5,0.0
+7,AI Industry & Corporate News,148,0.64,6.76,93.24,26.0,14.0,-0.014
