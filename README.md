@@ -2,7 +2,7 @@
 
 This project analyzes Wikipedia as a product by evaluating its health through time-series data (pageviews, active editors, edit volume) and assessing the impact of internal initiatives such as Wikipedia campaigns on user behavior.
 
-## Project Structure
+## Project Structure :-
 
 ```text
 wikipedia-analysis/
