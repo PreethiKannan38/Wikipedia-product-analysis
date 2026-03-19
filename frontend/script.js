@@ -99,7 +99,6 @@ const contentData = {
             vizElement.parentNode.insertBefore(scriptElement, vizElement);
         }
     },
-<<<<<<< HEAD
     "Twitter sentiment analysis": {
         title: "Twitter / X Sentiment Analysis",
         subtitle: "Interactive Tableau Dashboard for platform-level sentiment and topic insights",
@@ -142,7 +141,6 @@ const contentData = {
             var vizElement = divElement.getElementsByTagName('object')[0];
             vizElement.style.width = '100%';
             vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px';
-=======
     "editorAnalysis": {
         title: "Wikipedia Editor Analysis (2001–2026)",
         subtitle: "Community health trends, growth rates, and seasonal patterns",
@@ -203,8 +201,7 @@ const contentData = {
                 vizElement.style.width='100%';
                 vizElement.style.height='1400px';
             }
-            
->>>>>>> 55d5553f78d6633b15b68471174c20880f7ec0af
+
             var scriptElement = document.createElement('script');
             scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
             vizElement.parentNode.insertBefore(scriptElement, vizElement);
