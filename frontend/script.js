@@ -10,6 +10,7 @@ const contentData = {
                     <li><strong>Pageview Analysis:</strong> Interactive trends and seasonality analysis of Wikipedia traffic across time.</li>
                     <li><strong>Reddit Sentiment Analysis:</strong> Insights into public perception of Wikipedia and ChatGPT based on Reddit discussions.</li>
                     <li><strong>Twitter Sentiment Analysis:</strong> Analysis of public sentiment on Twitter regarding Wikipedia.</li>
+                    <li><strong>Student Survey Analysis:</strong> Interactive survey-based analysis of student behavior, trust, and feature expectations around Wikipedia and AI tools.</li>
                 </ul>
             </div>
         `
