@@ -217,6 +217,72 @@ hr {
     margin: 2rem 0;
 }
 
+/* Wikipedia Article Specific Styles */
+h2 {
+    font-family: var(--wp-font-family);
+    font-size: 1.5rem;
+    font-weight: normal;
+    border-bottom: 1px solid var(--wp-border);
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+    padding-bottom: 0.2rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: baseline;
+    gap: 0.5rem;
+}
+
+h3 {
+    font-family: var(--wp-sans-serif);
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-top: 1.2rem;
+    margin-bottom: 0.5rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: baseline;
+    gap: 0.5rem;
+}
+
+.edit-link {
+    font-size: 0.75rem;
+    font-family: var(--wp-sans-serif);
+    font-weight: normal;
+    color: var(--wp-blue);
+    text-decoration: none;
+}
+
+.edit-link:hover {
+    text-decoration: underline;
+}
+
+.edit-link::before { content: "["; color: #202122; }
+.edit-link::after { content: "]"; color: #202122; }
+
+.wiki-link {
+    color: var(--wp-blue);
+    text-decoration: none;
+}
+
+.wiki-link:hover {
+    text-decoration: underline;
+}
+
+.lang-code {
+    font-size: 0.8rem;
+    color: var(--wp-blue);
+    text-decoration: none;
+}
+
+.lang-code::before { content: "["; color: #202122; }
+.lang-code::after { content: "]"; color: #202122; }
+
+p {
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+}
+
 footer {
     margin-top: 4rem;
     padding-top: 1rem;
@@ -224,4 +290,19 @@ footer {
     font-size: 0.75rem;
     color: #54595d;
     text-align: right;
+}
+
+.conclusion-box {
+    border-left: 10px solid #202122;
+    margin-top: 3rem;
+    background-color: #f8f9fa;
+    padding: 1.5rem;
+}
+
+.conclusion-box h2 {
+    font-family: var(--wp-font-family);
+    font-size: 1.5rem;
+    border-bottom: 1px solid var(--wp-border);
+    margin-bottom: 1rem;
+    padding-bottom: 0.3rem;
 }
