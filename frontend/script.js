@@ -99,10 +99,57 @@ const contentData = {
             vizElement.parentNode.insertBefore(scriptElement, vizElement);
         }
     },
+    "Twitter sentiment analysis": {
+        title: "Twitter / X Sentiment Analysis",
+        subtitle: "Interactive Tableau Dashboard for platform-level sentiment and topic insights",
+        html: `
+        <div class="dashboard-container">
+            <div class='tableauPlaceholder' id='viz1773932868779' style='position: relative'><noscript><a href='#'><img alt='Dashboard 2 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Bo&#47;Book1_17739303447700&#47;Dashboard2&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='Book1_17739303447700&#47;Dashboard2' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Bo&#47;Book1_17739303447700&#47;Dashboard2&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /><param name='filter' value='publish=yes' /></object></div>
+            <script type='text/javascript'>
+                var divElement = document.getElementById('viz1773932868779');
+                var vizElement = divElement.getElementsByTagName('object')[0];
+                vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';
+                var scriptElement = document.createElement('script');
+                scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+                vizElement.parentNode.insertBefore(scriptElement, vizElement);
+            </script>
+        </div>
+        <div class="wiki-box insights-section">
+            <h2>Data Insights & Analysis</h2>
+            <div class="insight-item">
+                <p>
+                    An analysis of 3,500 Wikipedia-related tweets collected between January 2020 and late 2024 reveals a discernible and statistically meaningful shift in public brand perception of Wikipedia — one that corresponds closely with the emergence of large language models, and most acutely with the launch of ChatGPT in November 2022. Prior to this period, monthly tweet volume remained relatively stable, averaging between 50 and 80 posts per month, reflecting a consistent but largely specialist discourse confined to communities already familiar with Wikipedia's role as a digital knowledge resource.
+                </p>
+                <p>
+                    The November 2022 inflection point is unambiguous in the data. Monthly tweet volume surged to approximately 125 posts — nearly double the pre-launch average — and crucially, did not regress to prior levels in subsequent months. This sustained elevation indicates that ChatGPT's introduction did not merely generate a transient spike in public curiosity, but fundamentally repositioned Wikipedia within broader public discourse. Where Wikipedia had previously occupied the role of an uncontested primary reference, the advent of generative AI introduced a comparative dimension to public conversation — one in which Wikipedia's credibility, accuracy, and editorial integrity were actively debated in relation to AI-generated outputs.
+                </p>
+                <p>
+                    This structural shift is further corroborated by the sentiment composition data. The RoBERTa model — selected over VADER as the primary analytical instrument owing to its superior sensitivity to contextual nuance and negation — classifies 45.2% of all posts as positive, 30.0% as negative, and 24.8% as neutral across the full five-year period. However, a temporal disaggregation of these figures reveals a more complex trajectory. Pre-launch sentiment was characterised by a dominant positive composition, consistent with a period in which Wikipedia faced little direct reputational challenge. Post-launch, the neutral and negative proportions expanded measurably, reflecting the influx of comparative and evaluative discourse rather than straightforward reference or endorsement.
+                </p>
+                <p>
+                    The monthly RoBERTa continuous sentiment score substantiates this interpretation. Scores fluctuated within a broadly positive range of 0.0 to +0.3 throughout the pre-ChatGPT period, with limited volatility. Following the launch, the score exhibited markedly greater oscillation, with more frequent and deeper dips into negative territory observed through 2023 and into 2024. Notably, however, the sentiment baseline did not sustain a negative trajectory — scores recovered consistently following each trough, suggesting that Wikipedia's brand equity on the platform remained fundamentally resilient despite the intensification of critical discourse.
+                </p>
+                <p>
+                    Taken together, these findings support a nuanced conclusion: the introduction of ChatGPT did not erode Wikipedia's brand perception on Twitter, but it materially altered its character. Public engagement shifted from passive endorsement to active scrutiny — a transition that, while introducing greater sentiment volatility, simultaneously affirmed Wikipedia's continuing relevance as an epistemic benchmark in the age of artificial intelligence. The data indicates that Twitter users increasingly positioned Wikipedia not as a relic of the pre-AI information landscape, but as the human-verified standard against which machine-generated knowledge is evaluated and challenged.
+                </p>
+            </div>
+        </div>
+        <div class="footer">Interactive dashboard powered by Tableau Public</div>
+    `,
+        callback: () => {
+            var divElement = document.getElementById('viz1773932868779');
+            var vizElement = divElement.getElementsByTagName('object')[0];
+            vizElement.style.width = '100%';
+            vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px';
+            var scriptElement = document.createElement('script');
+            scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+            vizElement.parentNode.insertBefore(scriptElement, vizElement);
+        }
+    },
     "editorAnalysis": {
         title: "Wikipedia Editor Analysis (2001–2026)",
         subtitle: "Community health trends, growth rates, and seasonal patterns",
-        html: `
+                        html: `
             <div class="dashboard-container">
                 <div class='tableauPlaceholder' id='vizEditorAnalysis' style='position: relative'>
                     <noscript>
@@ -145,124 +192,58 @@ const contentData = {
             </div>
             <div class="footer">Interactive dashboard powered by Tableau Public</div>
         `,
-        callback: () => {
-            var divElement = document.getElementById('vizEditorAnalysis');
-            var vizElement = divElement.getElementsByTagName('object')[0];
-            
-            if ( divElement.offsetWidth > 800 ) { 
-                vizElement.style.width='100%';
-                vizElement.style.height=(divElement.offsetWidth*0.75)+'px';
-            } else if ( divElement.offsetWidth > 500 ) { 
-                vizElement.style.width='100%';
-                vizElement.style.height=(divElement.offsetWidth*0.75)+'px';
-            } else { 
-                vizElement.style.width='100%';
-                vizElement.style.height='1400px';
-            }
-            
-            var scriptElement = document.createElement('script');
-            scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
-            vizElement.parentNode.insertBefore(scriptElement, vizElement);
-        }
-    },
-    "topArticles": {
-        title: "Wikipedia Top Articles Analysis (2024)",
-        subtitle: "Event-driven traffic patterns, trending topics, and attention decay analysis",
-        html: `
-            <div class="dashboard-container">
-                <div class='tableauPlaceholder' id='vizTopArticles' style='position: relative'>
-                    <noscript>
-                        <a href='#'><img alt='Top Articles' src='https://public.tableau.com/static/images/To/TopArticles_17739386208110/TopArticles/1.png' style='border: none' /></a>
-                    </noscript>
-                    <object class='tableauViz' style='display:none;'>
-                        <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
-                        <param name='embed_code_version' value='3' />
-                        <param name='site_root' value='' />
-                        <param name='name' value='TopArticles_17739386208110/TopArticles' />
-                        <param name='tabs' value='no' />
-                        <param name='toolbar' value='yes' />
-                        <param name='animate_transition' value='yes' />
-                        <param name='display_static_image' value='yes' />
-                        <param name='display_spinner' value='yes' />
-                        <param name='display_overlay' value='yes' />
-                        <param name='display_count' value='yes' />
-                        <param name='language' value='en-US' />
-                    </object>
-                </div>
-            </div>
-            <div class="wiki-box insights-section">
-                <h2>Data Insights & Analysis</h2>
-                <div class="insight-item">
-                    <h3>1. Event-Driven Traffic Spikes</h3>
-                    <p>Wikipedia traffic exhibits distinct patterns correlated with real-world events. Breaking news, celebrity announcements, and major world events trigger immediate traffic surges, with top articles receiving 3–50x their baseline traffic within hours of event occurrence.</p>
-                </div>
-                <div class="insight-item">
-                    <h3>2. Attention Decay Patterns</h3>
-                    <p>Public interest follows predictable decay curves: celebrity-related content decays over 3–4 weeks, political events over 1–2 weeks, and sports events over 1 week. Understanding these patterns enables resource optimization and content freshness strategies.</p>
-                </div>
-                <div class="insight-item">
-                    <h3>3. Category-Specific Trends</h3>
-                    <p>Entertainment and politics show higher spike volatility (average spike ratio 3.8–4.2x), while science and technology exhibit more stable traffic patterns (spike ratio 1.8–2.1x), indicating different user engagement models across content domains.</p>
-                </div>
-                <div class="insight-item">
-                    <h3>4. Wikipedia as Trust Layer</h3>
-                    <p>Traffic patterns reveal Wikipedia's role as a verification platform during uncertainty. Users bypass social media during breaking news to access peer-reviewed information, demonstrating Wikipedia's critical function in the information ecosystem.</p>
-                </div>
-            </div>
-            <div class="footer">Interactive dashboard powered by Tableau Public</div>
-        `,
-        callback: () => {
-            var divElement = document.getElementById('vizTopArticles');
-            var vizElement = divElement.getElementsByTagName('object')[0];
-            
-            if ( divElement.offsetWidth > 800 ) { 
-                vizElement.style.width='100%';
-                vizElement.style.height=(divElement.offsetWidth*0.75)+'px';
-            } else if ( divElement.offsetWidth > 500 ) { 
-                vizElement.style.width='100%';
-                vizElement.style.height=(divElement.offsetWidth*0.75)+'px';
-            } else { 
-                vizElement.style.width='100%';
-                vizElement.style.height='1400px';
-            }
-            
-            var scriptElement = document.createElement('script');
-            scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
-            vizElement.parentNode.insertBefore(scriptElement, vizElement);
-        }
-    },
+                            callback: () => {
+                                var divElement = document.getElementById('vizEditorAnalysis');
+                                var vizElement = divElement.getElementsByTagName('object')[0];
 
-};
+                                if (divElement.offsetWidth > 800) {
+                                    vizElement.style.width = '100%';
+                                    vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px';
+                                } else if (divElement.offsetWidth > 500) {
+                                    vizElement.style.width = '100%';
+                                    vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px';
+                                } else {
+                                    vizElement.style.width = '100%';
+                                    vizElement.style.height = '1400px';
+                                }
 
-function renderContent(key) {
-    const data = contentData[key];
-    const header = document.querySelector('header');
-    const container = document.getElementById('main-container');
+                                var scriptElement = document.createElement('script');
+                                scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+                                vizElement.parentNode.insertBefore(scriptElement, vizElement);
+                            }
+            },
 
-    // Update Header
-    header.innerHTML = `
+        };
+
+        function renderContent(key) {
+            const data = contentData[key];
+const header = document.querySelector('header');
+const container = document.getElementById('main-container');
+
+// Update Header
+header.innerHTML = `
         <h1>${data.title}</h1>
         <div class="subtitle">${data.subtitle}</div>
     `;
 
-    // Update Content
-    container.innerHTML = data.html;
+// Update Content
+container.innerHTML = data.html;
 
-    // Run Callback if exists
-    if (data.callback) {
-        data.callback();
+// Run Callback if exists
+if (data.callback) {
+    data.callback();
+}
+
+// Update Sidebar Active State
+document.querySelectorAll('.menu-item').forEach(item => {
+    item.classList.remove('active');
+    if (item.getAttribute('data-tab') === key) {
+        item.classList.add('active');
     }
+});
 
-    // Update Sidebar Active State
-    document.querySelectorAll('.menu-item').forEach(item => {
-        item.classList.remove('active');
-        if (item.getAttribute('data-tab') === key) {
-            item.classList.add('active');
-        }
-    });
-
-    // Scroll to top
-    window.scrollTo(0, 0);
+// Scroll to top
+window.scrollTo(0, 0);
 }
 
 document.addEventListener('DOMContentLoaded', () => {
