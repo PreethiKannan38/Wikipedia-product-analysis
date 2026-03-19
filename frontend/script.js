@@ -141,6 +141,67 @@ const contentData = {
             var vizElement = divElement.getElementsByTagName('object')[0];
             vizElement.style.width = '100%';
             vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px';
+    "editorAnalysis": {
+        title: "Wikipedia Editor Analysis (2001–2026)",
+        subtitle: "Community health trends, growth rates, and seasonal patterns",
+        html: `
+            <div class="dashboard-container">
+                <div class='tableauPlaceholder' id='vizEditorAnalysis' style='position: relative'>
+                    <noscript>
+                        <a href='#'><img alt='Editor Analysis' src='https://public.tableau.com/static/images/Ed/EditorAnalysis/EditorAnalysisDashboard/1.png' style='border: none' /></a>
+                    </noscript>
+                    <object class='tableauViz' style='display:none;'>
+                        <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+                        <param name='embed_code_version' value='3' />
+                        <param name='site_root' value='' />
+                        <param name='name' value='EditorAnalysis/EditorAnalysisDashboard' />
+                        <param name='tabs' value='yes' />
+                        <param name='toolbar' value='yes' />
+                        <param name='animate_transition' value='yes' />
+                        <param name='display_static_image' value='yes' />
+                        <param name='display_spinner' value='yes' />
+                        <param name='display_overlay' value='yes' />
+                        <param name='display_count' value='yes' />
+                        <param name='language' value='en-US' />
+                    </object>
+                </div>
+            </div>
+            <div class="wiki-box insights-section">
+                <h2>Data Insights & Analysis</h2>
+                <div class="insight-item">
+                    <h3>1. Editor Community Trends</h3>
+                    <p>Wikipedia's active editor count reflects the platform's evolution from niche encyclopedia to global knowledge commons. Early growth (2001–2007) saw rapid adoption, peaking at ~63,000 editors in March 2007. Subsequent years show stabilization around 40,000 editors, with seasonal variations linked to academic calendars and engagement campaigns.</p>
+                </div>
+                <div class="insight-item">
+                    <h3>2. Seasonality & Engagement Patterns</h3>
+                    <p>Editor activity exhibits strong monthly seasonality, with predictable peaks during school/work calendar periods and troughs during summer months. This reveals that Wikipedia editing is integrated into academic and professional workflows, rather than casual leisure activity.</p>
+                </div>
+                <div class="insight-item">
+                    <h3>3. Growth Rate Analysis</h3>
+                    <p>Month-over-month and year-over-year growth analysis shows stabilization post-2007, with minimal sustained growth. This indicates market saturation among active editors, suggesting future growth requires strategies focused on editor retention and community health rather than raw acquisition.</p>
+                </div>
+                <div class="insight-item">
+                    <h3>4. Community Health Metrics</h3>
+                    <p>Rolling volatility analysis identifies periods of community flux. Anomaly detection reveals significant shifts corresponding to platform changes, policy updates, and external events that impact editor engagement and retention.</p>
+                </div>
+            </div>
+            <div class="footer">Interactive dashboard powered by Tableau Public</div>
+        `,
+        callback: () => {
+            var divElement = document.getElementById('vizEditorAnalysis');
+            var vizElement = divElement.getElementsByTagName('object')[0];
+            
+            if ( divElement.offsetWidth > 800 ) { 
+                vizElement.style.width='100%';
+                vizElement.style.height=(divElement.offsetWidth*0.75)+'px';
+            } else if ( divElement.offsetWidth > 500 ) { 
+                vizElement.style.width='100%';
+                vizElement.style.height=(divElement.offsetWidth*0.75)+'px';
+            } else { 
+                vizElement.style.width='100%';
+                vizElement.style.height='1400px';
+            }
+            
             var scriptElement = document.createElement('script');
             scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
             vizElement.parentNode.insertBefore(scriptElement, vizElement);
