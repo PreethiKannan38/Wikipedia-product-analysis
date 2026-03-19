@@ -211,151 +211,98 @@ const contentData = {
             vizElement.parentNode.insertBefore(scriptElement, vizElement);
         }
     },
-    studentSurveyAnalysis: {
-        title: "Wikipedia Student Survey Analysis",
-        subtitle: "Interactive Tableau dashboard on user behavior, trust, and feature opportunities",
-        html: `
-            <div class="dashboard-container">
-                <div class='tableauPlaceholder' id='viz1773943642688' style='position: relative'>
-                    <noscript>
-                        <a href='#'>
-                            <img alt='Dashboard 1' src='https://public.tableau.com/static/images/Bo/Book1_17739433910390/Dashboard1/1_rss.png' style='border: none' />
-                        </a>
-                    </noscript>
-                    <object class='tableauViz' style='display:none;'>
-                        <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
-                        <param name='embed_code_version' value='3' />
-                        <param name='site_root' value='' />
-                        <param name='name' value='Book1_17739433910390/Dashboard1' />
-                        <param name='tabs' value='no' />
-                        <param name='toolbar' value='yes' />
-                        <param name='static_image' value='https://public.tableau.com/static/images/Bo/Book1_17739433910390/Dashboard1/1.png' />
-                        <param name='animate_transition' value='yes' />
-                        <param name='display_static_image' value='yes' />
-                        <param name='display_spinner' value='yes' />
-                        <param name='display_overlay' value='yes' />
-                        <param name='display_count' value='yes' />
-                        <param name='language' value='en-US' />
-                        <param name='filter' value='publish=yes' />
-                    </object>
-                </div>
+  studentSurveyAnalysis: {
+    title: "Wikipedia Student Survey Analysis",
+    subtitle: "Interactive Tableau dashboard on user behavior, trust, and feature opportunities",
+    html: `
+        <div class="dashboard-container">
+            <div class="tableauPlaceholder" id="vizStudentSurvey" style="position: relative; width: 100%;">
+                <noscript>
+                    <a href="#">
+                        <img alt="Wikipedia Student Survey Analysis"
+                             src="https://public.tableau.com/static/images/Bo/Book1_17739433910390/Dashboard1/1.png"
+                             style="border: none; width: 100%;" />
+                    </a>
+                </noscript>
+                <object class="tableauViz" style="display:none;">
+                    <param name="host_url" value="https%3A%2F%2Fpublic.tableau.com%2F" />
+                    <param name="embed_code_version" value="3" />
+                    <param name="site_root" value="" />
+                    <param name="name" value="Book1_17739433910390/Dashboard1" />
+                    <param name="tabs" value="no" />
+                    <param name="toolbar" value="yes" />
+                    <param name="static_image" value="https://public.tableau.com/static/images/Bo/Book1_17739433910390/Dashboard1/1.png" />
+                    <param name="animate_transition" value="yes" />
+                    <param name="display_static_image" value="yes" />
+                    <param name="display_spinner" value="yes" />
+                    <param name="display_overlay" value="yes" />
+                    <param name="display_count" value="yes" />
+                    <param name="language" value="en-US" />
+                    <param name="filter" value="publish=yes" />
+                </object>
             </div>
-            <div class="wiki-box insights-section">
-                <h2>Data Insights & Analysis</h2>
+        </div>
 
-                <div class="insight-item">
-                    <h3>1. Strong Shift Toward AI Tools</h3>
-                    <p>
-                        The survey indicates a clear behavioral shift from traditional reference-based information seeking toward conversational AI tools. A large share of respondents report frequent AI usage, and the comparison heatmap shows that high AI use does not necessarily correspond with equally high Wikipedia use. This suggests that <strong>AI tools are increasingly becoming the first-stop interface for quick information access</strong>, especially when users prioritize speed and ease over deeper article-style reading.
-                    </p>
-                </div>
+        <div class="wiki-box insights-section">
+            <h2>Data Insights & Analysis</h2>
 
-                <div class="insight-item">
-                    <h3>2. Trust Is No Longer Wikipedia's Exclusive Advantage</h3>
-                    <p>
-                        Trust distribution shows that respondents are divided across Wikipedia, AI tools, and mixed trust positions such as "both equally." This is significant because Wikipedia historically held a stronger perception of credibility for educational use. The dashboard suggests that <strong>AI tools are now competing not only on convenience, but also on perceived usefulness and trustworthiness</strong>, even if users remain aware of accuracy concerns.
-                    </p>
-                </div>
-
-                <div class="insight-item">
-                    <h3>3. Users Choose AI for Speed, Simplicity, and Interactivity</h3>
-                    <p>
-                        The strongest reasons for preferring AI over Wikipedia are linked to <strong>faster answers, easier language, personalized explanations, and interactive conversation</strong>. This indicates that the competitive gap is not purely about information quality, but about <strong>experience design</strong>. Users increasingly prefer systems that reduce reading effort and adapt explanations to their needs, rather than expecting them to navigate long-form encyclopedia content independently.
-                    </p>
-                </div>
-
-                <div class="insight-item">
-                    <h3>4. Wikipedia's Opportunity Lies in Product Redesign, Not Just Content</h3>
-                    <p>
-                        The feature preference results provide a strong product signal: respondents show clear interest in AI-powered summaries, interactive Q&amp;A, chat-style explanations, multilingual support, and simplified student-friendly modes. This suggests that Wikipedia's future relevance may depend less on expanding content volume and more on <strong>repackaging trusted knowledge into a more adaptive, assistive interface</strong>. In other words, users are not rejecting Wikipedia's knowledge base; they are rejecting the friction involved in accessing it.
-                    </p>
-                </div>
-
-                <div class="insight-item">
-                    <h3>5. Strategic Implication</h3>
-                    <p>
-                        Overall, the dashboard supports a clear conclusion: <strong>students are not moving away from knowledge-seeking, but away from static presentation formats</strong>. AI tools are winning because they feel faster, simpler, and more responsive. For Wikipedia, the strategic opportunity is to preserve its credibility advantage while integrating AI-native affordances such as summaries, conversational exploration, and guided explanations. This would allow Wikipedia to evolve from a passive reference destination into a more modern learning companion.
-                    </p>
-                </div>
-            </div>
-            <div class="footer">Interactive dashboard powered by Tableau Public</div>
-        `,
-        callback: () => {
-            var divElement = document.getElementById('viz1773943642688');
-            var vizElement = divElement.getElementsByTagName('object')[0];
-            if (divElement.offsetWidth > 800) {
-                vizElement.style.width = '100%';
-                vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px';
-            } else if (divElement.offsetWidth > 500) {
-                vizElement.style.width = '100%';
-                vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px';
-            } else {
-                vizElement.style.width = '100%';
-                vizElement.style.height = '3127px';
-            }
-            var scriptElement = document.createElement('script');
-            scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
-            vizElement.parentNode.insertBefore(scriptElement, vizElement);
-        }
-    },
-    strategic_insights: {
-        title: "Integrated Business Insights & Strategic Recommendations",
-        subtitle: "From Wikipedia, the free product analysis",
-        html: `
-            <div class="wiki-box" style="border-left: none; background: none; border: 1px solid #a2a9b1; padding: 1em; margin-bottom: 2em; font-size: 0.9em;">
-                <p><strong>Combined synthesis</strong> of findings across pageview trends, community sentiment, and user behavior analysis (2015–2025).</p>
-            </div>
-
-            <h2>Cross-Sectional Findings <a class="edit-link">edit</a></h2>
-
-            <h3>Convergent Evidence Across All Data Sources <a class="edit-link">edit</a></h3>
-            <p>
-                The four analytical perspectives—<a class="wiki-link">pageview analysis</a>, <a class="wiki-link">Reddit sentiment</a>, user survey, and <a class="wiki-link">graph analytics</a>—produce a coherent and mutually reinforcing picture. Wikipedia's aggregate traffic has declined since 2023, Reddit sentiment toward AI and Wikipedia has become measurably more negative since <a class="wiki-link">ChatGPT</a>'s launch, and survey respondents confirm active substitution of Wikipedia with AI tools as their primary daily information source.
-            </p>
-            <p>
-                At the same time, all sources identify Wikipedia's enduring competitive advantage: <strong>trust</strong>. Survey respondents trust Wikipedia more than AI tools despite using it less. Reddit users route to Wikipedia specifically to verify AI claims, and this behaviour is growing. The strategic opportunity is to close the usability gap without compromising the editorial integrity that creates the trust advantage in the first place.
-            </p>
-
-            <h3>The Trust-Usage Paradox <a class="edit-link">edit</a></h3>
-            <p>
-                The most important quantitative finding is the persistent gap between stated trust and observed usage. Wikipedia commands higher trust ratings than AI tools from a plurality of student respondents, yet AI tools have captured daily usage frequency across every access band. This paradox has a single root cause: the article format was designed for exploratory desktop reading, and the dominant use case in 2026 is mobile, goal-directed, and time-constrained.
-            </p>
-
-            <h2>Strategic Recommendations <a class="edit-link">edit</a></h2>
-
-            <h3>Rec 1: Deploy AI Summaries <a class="edit-link">edit</a></h3>
-            <p>
-                Across the survey's feature wishlist, format preference, and frustration analysis, a single feature emerges as both the most requested and the most likely to re-engage lapsed users: an <strong>AI-generated summary</strong> positioned at the top of each Wikipedia article. Demand is concentrated in the largest frustration segments—users frustrated by excessive length and lack of direct answers.
-            </p>
-
-            <h3>Rec 2: Formalise the AI Verification Layer <a class="edit-link">edit</a></h3>
-            <p>
-                Reddit analysis shows that users already treat Wikipedia as the corrective tool for AI inaccuracies. The <a class="wiki-link">Wikimedia Foundation</a> should formalise this role by negotiating structured data agreements with major AI providers requiring visible attribution whenever factual claims are grounded in Wikipedia content.
-            </p>
-
-            <h3>Rec 3: Launch a Simplified Student Mode <a class="edit-link">edit</a></h3>
-            <p>
-                The survey's top feature wishlist item is a simplified student mode—a dedicated interface with jargon-reduced language, structured summaries, and curriculum-aligned framing. Given that the overwhelming majority of respondents are students aged 17–22, this mode would serve the modal user rather than a niche segment.
-            </p>
-
-            <h3>Rec 4: Invest in the Mobile App <a class="edit-link">edit</a></h3>
-            <p>
-                Mobile app traffic is 28% less volatile, has stronger autocorrelation, and recovers from disruption 1.8× faster than web traffic. The app channel also shows the highest <a class="wiki-link">CAGR</a> among all three platforms. These properties make the mobile app the most strategically valuable surface for product innovation.
-            </p>
-
-            <h3>Rec 5: Protect Editorial Integrity <a class="edit-link">edit</a></h3>
-            <p>
-                Multiple signals point to a growing risk that AI-generated content is entering Wikipedia through editors who paste AI output without adequate verification. Wikipedia's entire value proposition rests on being the source humans trust over AI.
-            </p>
-
-            <div class="wiki-box" style="border-left: none; margin-top: 3rem; padding: 0;">
-                <h2 style="border-bottom: 2px solid #202122;">Conclusion <a class="edit-link">edit</a></h2>
+            <div class="insight-item">
+                <h3>1. Strong Shift Toward AI Tools</h3>
                 <p>
-                    Wikipedia remains a <strong>trusted and resilient knowledge platform</strong>, but its usage is evolving. While AI tools are increasingly used for quick, everyday queries, Wikipedia continues to play a key role in <strong>verification and reliable information access</strong>. The data highlights a <strong>gap between trust and usage</strong>, along with opportunities across time (weekends, seasonal dips) and content formats where engagement can be improved. Moving forward, the focus should be on making trusted knowledge easier and faster to access, especially in mobile and time-constrained contexts, while <strong>preserving the human-driven editorial process that underpins its credibility</strong>.
+                    The survey indicates a clear behavioral shift from traditional reference-based information seeking toward conversational AI tools. A large share of respondents report frequent AI usage, and the comparison heatmap shows that high AI use does not necessarily correspond with equally high Wikipedia use. This suggests that <strong>AI tools are increasingly becoming the first-stop interface for quick information access</strong>, especially when users prioritize speed and ease over deeper article-style reading.
                 </p>
             </div>
-        `
+
+            <div class="insight-item">
+                <h3>2. Trust Is No Longer Wikipedia's Exclusive Advantage</h3>
+                <p>
+                    Trust distribution shows that respondents are divided across Wikipedia, AI tools, and mixed trust positions such as "both equally." This is significant because Wikipedia historically held a stronger perception of credibility for educational use. The dashboard suggests that <strong>AI tools are now competing not only on convenience, but also on perceived usefulness and trustworthiness</strong>, even if users remain aware of accuracy concerns.
+                </p>
+            </div>
+
+            <div class="insight-item">
+                <h3>3. Users Choose AI for Speed, Simplicity, and Interactivity</h3>
+                <p>
+                    The strongest reasons for preferring AI over Wikipedia are linked to <strong>faster answers, easier language, personalized explanations, and interactive conversation</strong>. This indicates that the competitive gap is not purely about information quality, but about <strong>experience design</strong>. Users increasingly prefer systems that reduce reading effort and adapt explanations to their needs, rather than expecting them to navigate long-form encyclopedia content independently.
+                </p>
+            </div>
+
+            <div class="insight-item">
+                <h3>4. Wikipedia's Opportunity Lies in Product Redesign, Not Just Content</h3>
+                <p>
+                    The feature preference results provide a strong product signal: respondents show clear interest in AI-powered summaries, interactive Q&amp;A, chat-style explanations, multilingual support, and simplified student-friendly modes. This suggests that Wikipedia's future relevance may depend less on expanding content volume and more on <strong>repackaging trusted knowledge into a more adaptive, assistive interface</strong>. In other words, users are not rejecting Wikipedia's knowledge base; they are rejecting the friction involved in accessing it.
+                </p>
+            </div>
+
+            <div class="insight-item">
+                <h3>5. Strategic Implication</h3>
+                <p>
+                    Overall, the dashboard supports a clear conclusion: <strong>students are not moving away from knowledge-seeking, but away from static presentation formats</strong>. AI tools are winning because they feel faster, simpler, and more responsive. For Wikipedia, the strategic opportunity is to preserve its credibility advantage while integrating AI-native affordances such as summaries, conversational exploration, and guided explanations. This would allow Wikipedia to evolve from a passive reference destination into a more modern learning companion.
+                </p>
+            </div>
+        </div>
+
+        <div class="footer">Interactive dashboard powered by Tableau Public</div>
+    `,
+    callback: () => {
+        const divElement = document.getElementById('vizStudentSurvey');
+        if (!divElement) return;
+
+        const vizElement = divElement.getElementsByTagName('object')[0];
+        if (!vizElement) return;
+
+        vizElement.style.width = '100%';
+        vizElement.style.height = '950px';
+
+        const oldScript = divElement.parentNode.querySelector('script[data-tableau="student-survey"]');
+        if (oldScript) oldScript.remove();
+
+        const scriptElement = document.createElement('script');
+        scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+        scriptElement.setAttribute('data-tableau', 'student-survey');
+        vizElement.parentNode.insertBefore(scriptElement, vizElement);
     }
+},
 };
 
 function renderContent(key) {
