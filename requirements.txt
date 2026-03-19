@@ -22,3 +22,6 @@ scikit-learn>=1.3
 
 # Notebook
 ipywidgets==8.1.8
+
+# Web Dashboard
+streamlit==1.42.2
