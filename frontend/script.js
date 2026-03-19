@@ -7,9 +7,9 @@ const contentData = {
                 <p><strong>Welcome to the Wikipedia Product Analysis Dashboard.</strong> This project explores the health and reach of Wikipedia through multi-dimensional data analysis.</p>
                 <p>Navigate through the menu on the left to explore different facets of the analysis, including:</p>
                 <ul>
-                    <li><strong>Pageview Analysis:</strong> Interactive trends and seasonality analysis.</li>
-                    <li><strong>Reddit Sentiment Analysis:</strong> .</li>
-                    <li><strong>Twitter Sentiment Analysis:</strong>.</li>
+                    <li><strong>Pageview Analysis:</strong> Interactive trends and seasonality analysis of Wikipedia traffic across time.</li>
+                    <li><strong>Reddit Sentiment Analysis:</strong> Insights into public perception of Wikipedia and ChatGPT based on Reddit discussions.</li>
+                    <li><strong>Twitter Sentiment Analysis:</strong> Analysis of public sentiment on Twitter regarding Wikipedia.</li>
                 </ul>
             </div>
         `
@@ -19,12 +19,32 @@ const contentData = {
         subtitle: "Interactive Tableau Dashboard for regional and platform-level insights",
         html: `
             <div class="dashboard-container">
-                <div class='tableauPlaceholder' id='viz1773926889549' style='position: relative'><noscript><a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;wi&#47;wikipediapageviewanalysis&#47;pageviewanalysis&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='wikipediapageviewanalysis&#47;pageviewanalysis' /><param name='tabs' value='yes' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;wi&#47;wikipediapageviewanalysis&#47;pageviewanalysis&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-GB' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1773926384347');                    var vizElement = divElement.getElementsByTagName('object')[0];                    if ( divElement.offsetWidth > 800 ) { vizElement.style.minWidth='1000px';vizElement.style.maxWidth='100%';vizElement.style.minHeight='850px';vizElement.style.maxHeight=(divElement.offsetWidth*0.75)+'px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.minWidth='1000px';vizElement.style.maxWidth='100%';vizElement.style.minHeight='850px';vizElement.style.maxHeight=(divElement.offsetWidth*0.75)+'px';} else { vizElement.style.width='100%';vizElement.style.minHeight='1250px';vizElement.style.maxHeight=(divElement.offsetWidth*1.77)+'px';}                     var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+                <div class='tableauPlaceholder' id='viz1773934367186' style='position: relative'><noscript><a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;wi&#47;wikipediapageviewanalysis&#47;pageviewanalysis&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='wikipediapageviewanalysis&#47;pageviewanalysis' /><param name='tabs' value='yes' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;wi&#47;wikipediapageviewanalysis&#47;pageviewanalysis&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-GB' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1773934367186');                    var vizElement = divElement.getElementsByTagName('object')[0];                    if ( divElement.offsetWidth > 800 ) { vizElement.style.minWidth='1000px';vizElement.style.maxWidth='100%';vizElement.style.minHeight='850px';vizElement.style.maxHeight=(divElement.offsetWidth*0.75)+'px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.minWidth='1000px';vizElement.style.maxWidth='100%';vizElement.style.minHeight='850px';vizElement.style.maxHeight=(divElement.offsetWidth*0.75)+'px';} else { vizElement.style.width='100%';vizElement.style.minHeight='1400px';vizElement.style.maxHeight=(divElement.offsetWidth*1.77)+'px';}                     var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+            </div>
+            <div class="wiki-box insights-section">
+                <h2>Data Insights & Analysis</h2>
+                <div class="insight-item">
+                    <h3>1. Weekend vs Weekday Usage</h3>
+                        <p>
+                            Wikipedia was primarily a <strong>weekday-driven utility before 2020</strong>, with higher activity during school and workdays (ratio &lt; 1.0). Over time, the ratio steadily increases and crosses 1.0 during the pandemic, remaining above it, indicating rising weekend activity. This suggests an evolving usage pattern, where <strong>remote and flexible work may have shifted traditional school- and work-driven traffic spikes</strong>.
+                        </p>
+                    <h3>2. Wikipedia Seasonality</h3>
+                        <p>
+                            Wikipedia traffic shows a <strong>stable seasonal pattern with a strong baseline (7–8B pageviews)</strong>, where <strong>June consistently records the lowest pageviews and January shows comparatively higher activity</strong>, reflecting predictable user behavior cycles. Wikipedia’s traffic demonstrates <strong>dual drivers</strong>: a stable seasonal structure tied to academic calendars and information-seeking behavior, combined with <strong>unpredictable spikes from major world events</strong>, highlighting its resilience in maintaining a consistent multi-billion pageview baseline despite external shocks. However, recent years indicate a <strong>slight downward shift from the 2020–2022 peak</strong>, suggesting normalization after pandemic-driven demand, with a <strong>minor emerging influence of AI-mediated information access</strong> shaping future growth.
+                        </p>
+                    <h3>3. Campaign Impact on Traffic</h3>
+                        <p>
+                            Across campaign types, pageview lift remains within a relatively narrow range (around -6% to +7%), indicating that overall impact on Wikipedia traffic is moderate. Median effects cluster near zero, suggesting campaigns do not drastically alter total usage. However, <strong>community-driven initiatives like Wikipedia Asian Month show relatively stronger positive engagement signals</strong> compared to fundraising or photography campaigns. Campaigns have limited direct impact on overall pageview volume, as most of them, especially fundraising ones, target existing users and prioritize conversion over traffic growth, reflecting a different product objective rather than a lack of effectiveness.
+                        </p>
+                        <h3>4. Topic-Based Seasonal Behavior</h3>
+                        <p>
+                            Different content domains on Wikipedia exhibit distinct seasonal patterns. Education-related content follows strong academic cycles, political content shows moderate variation linked to real-world events, while entertainment remains relatively stable with weaker seasonality. This highlights a dual role of Wikipedia: it functions as a <strong>structured academic reference driven by school and work cycles</strong>, while also serving as a <strong>steady source of general and event-driven information</strong>. These patterns indicate that user intent varies by domain, and growth in one category is unlikely to cannibalize others, suggesting opportunities for cross-domain engagement.
+                        </p>
             </div>
             <div class="footer">Interactive dashboard powered by Tableau Public</div>
         `,
         callback: () => {
-            var divElement = document.getElementById('viz1773926889549');
+            var divElement = document.getElementById('viz1773934367186');
             var vizElement = divElement.getElementsByTagName('object')[0];
             vizElement.style.width = '100%';
             vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px';
