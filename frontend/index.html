@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wikipedia Product Analysis Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="https://en.wikipedia.org/static/favicon/wikipedia.ico">
+</head>
+
+<body>
+    <nav id="sidebar">
+        <a href="#" id="logo" class="menu-item" data-tab="home">
+            <svg viewBox="0 0 100 100" width="80" height="80">
+                <circle cx="50" cy="50" r="45" fill="none" stroke="#a2a9b1" stroke-width="2" />
+                <text x="50" y="65" font-family="serif" font-size="60" text-anchor="middle" fill="#202122">W</text>
+            </svg>
+            <span>Wikipedia</span>
+        </a>
+
+        <div class="menu-group">
+            <h3>Navigation</h3>
+            <a class="menu-item active" data-tab="home">Main page</a>
+            <a class="menu-item" data-tab="pageviews">Pageview Analysis</a>
+            <a class="menu-item" data-tab="Reddit sentiment analysis">Reddit Sentiment Analysis</a>
+        </div>
+    </nav>
+
+    <main id="content">
+        <header>
+            <!-- Header will be dynamically populated -->
+        </header>
+
+        <div id="main-container">
+            <!-- Content will be dynamically populated -->
+        </div>
+
+        <footer>
+            <hr>
+            <p>Product Analysis Dashboard (2015–2025) &bull; Built with the Wikipedia Design Language</p>
+            <p>This page was last edited on 19 March 2026, at 18:50 (UTC).</p>
+        </footer>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
