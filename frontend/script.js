@@ -376,6 +376,64 @@ const contentData = {
             scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
             vizElement.parentNode.insertBefore(scriptElement, vizElement);
         }
+    },
+    "strategic_insights": {
+        title: "Integrated Business Insights & Strategic Recommendations",
+        subtitle: "From Wikipedia, the free product analysis",
+        html: `
+            <div class="wiki-box" style="border-left: none; background: none; border: 1px solid #a2a9b1; padding: 1em; margin-bottom: 2em; font-size: 0.9em;">
+                <p><strong>Combined synthesis</strong> of findings across pageview trends, community sentiment, and user behavior analysis (2015–2025).</p>
+            </div>
+
+            <h2>Cross-Sectional Findings <a class="edit-link">edit</a></h2>
+            
+            <h3>Convergent Evidence Across All Data Sources <a class="edit-link">edit</a></h3>
+            <p>
+                The four analytical perspectives—<a class="wiki-link">pageview analysis</a>, <a class="wiki-link">Reddit sentiment</a>, user survey, and <a class="wiki-link">graph analytics</a>—produce a coherent and mutually reinforcing picture. Wikipedia’s aggregate traffic has declined since 2023, Reddit sentiment toward AI and Wikipedia has become measurably more negative since <a class="wiki-link">ChatGPT</a>’s launch, and survey respondents confirm active substitution of Wikipedia with AI tools as their primary daily information source.
+            </p>
+            <p>
+                At the same time, all sources identify Wikipedia’s enduring competitive advantage: <strong>trust</strong>. Survey respondents trust Wikipedia more than AI tools despite using it less. Reddit users route to Wikipedia specifically to verify AI claims, and this behaviour is growing. The strategic opportunity is to close the usability gap without compromising the editorial integrity that creates the trust advantage in the first place.
+            </p>
+
+            <h3>The Trust-Usage Paradox <a class="edit-link">edit</a></h3>
+            <p>
+                The most important quantitative finding is the persistent gap between stated trust and observed usage. Wikipedia commands higher trust ratings than AI tools from a plurality of student respondents, yet AI tools have captured daily usage frequency across every access band. This paradox has a single root cause: the article format was designed for exploratory desktop reading, and the dominant use case in 2026 is mobile, goal-directed, and time-constrained.
+            </p>
+
+            <h2>Strategic Recommendations <a class="edit-link">edit</a></h2>
+
+            <h3>Rec 1: Deploy AI Summaries <a class="edit-link">edit</a></h3>
+            <p>
+                Across the survey’s feature wishlist, format preference, and frustration analysis, a single feature emerges as both the most requested and the most likely to re-engage lapsed users: an <strong>AI-generated summary</strong> positioned at the top of each Wikipedia article. Demand is concentrated in the largest frustration segments—users frustrated by excessive length and lack of direct answers.
+            </p>
+
+            <h3>Rec 2: Formalise the AI Verification Layer <a class="edit-link">edit</a></h3>
+            <p>
+                Reddit analysis shows that users already treat Wikipedia as the corrective tool for AI inaccuracies. The <a class="wiki-link">Wikimedia Foundation</a> <a class="lang-code">de</a> should formalise this role by negotiating structured data agreements with major AI providers requiring visible attribution whenever factual claims are grounded in Wikipedia content.
+            </p>
+
+            <h3>Rec 3: Launch a Simplified Student Mode <a class="edit-link">edit</a></h3>
+            <p>
+                The survey’s top feature wishlist item is a simplified student mode—a dedicated interface with jargon-reduced language, structured summaries, and curriculum-aligned framing. Given that the overwhelming majority of respondents are students aged 17–22, this mode would serve the modal user rather than a niche segment.
+            </p>
+
+            <h3>Rec 4: Invest in the Mobile App <a class="edit-link">edit</a></h3>
+            <p>
+                Mobile app traffic is 28% less volatile, has stronger autocorrelation, and recovers from disruption 1.8× faster than web traffic. The app channel also shows the highest <a class="wiki-link">CAGR</a> among all three platforms. These properties make the mobile app the most strategically valuable surface for product innovation.
+            </p>
+
+            <h3>Rec 5: Protect Editorial Integrity <a class="edit-link">edit</a></h3>
+            <p>
+                Multiple signals point to a growing risk that AI-generated content is entering Wikipedia through editors who paste AI output without adequate verification. Wikipedia’s entire value proposition rests on being the source humans trust over AI.
+            </p>
+
+            <div class="wiki-box" style="border-left: none; margin-top: 3rem; padding: 0;">
+                <h2 style="border-bottom: 2px solid #202122;">Conclusion <a class="edit-link">edit</a></h2>
+                <p>
+                    Wikipedia remains a <strong>trusted and resilient knowledge platform</strong>, but its usage is evolving. While AI tools are increasingly used for quick, everyday queries, Wikipedia continues to play a key role in <strong>verification and reliable information access</strong>. The data highlights a <strong>gap between trust and usage</strong>, along with opportunities across time (weekends, seasonal dips) and content formats where engagement can be improved. Moving forward, the focus should be on making trusted knowledge easier and faster to access, especially in mobile and time-constrained contexts, while <strong>preserving the human-driven editorial process that underpins its credibility</strong>.
+                </p>
+     </div>
+        `
     }
 };
 
