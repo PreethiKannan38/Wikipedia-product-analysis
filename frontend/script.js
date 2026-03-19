@@ -10,6 +10,8 @@ const contentData = {
                     <li><strong>Pageview Analysis:</strong> Interactive trends and seasonality analysis of Wikipedia traffic across time.</li>
                     <li><strong>Reddit Sentiment Analysis:</strong> Insights into public perception of Wikipedia and ChatGPT based on Reddit discussions.</li>
                     <li><strong>Twitter Sentiment Analysis:</strong> Analysis of public sentiment on Twitter regarding Wikipedia.</li>
+                    <li><strong>Editor Analysis:</strong> Community health metrics, growth trends, and seasonal patterns of Wikipedia editors from 2001–2026.</li>
+                    <li><strong>Top Articles Analysis:</strong> Event-driven traffic patterns and attention decay analysis of Wikipedia's most viewed articles in 2024.</li>
                 </ul>
             </div>
         `
@@ -355,6 +357,72 @@ const contentData = {
                 </p>
             </div>
         `
+    },
+    "topArticles": {
+        title: "Wikipedia Top Articles Analysis (2024)",
+        subtitle: "Event-driven traffic patterns, trending topics, and attention decay analysis",
+        html: `
+            <div class="dashboard-container">
+                <div class='tableauPlaceholder' id='vizTopArticles' style='position: relative'>
+                    <noscript>
+                        <a href='#'><img alt='Top Articles' src='https://public.tableau.com/static/images/To/TopArticles_17739386208110/TopArticles/1.png' style='border: none' /></a>
+                    </noscript>
+                    <object class='tableauViz' style='display:none;'>
+                        <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+                        <param name='embed_code_version' value='3' />
+                        <param name='site_root' value='' />
+                        <param name='name' value='TopArticles_17739386208110/TopArticles' />
+                        <param name='tabs' value='no' />
+                        <param name='toolbar' value='yes' />
+                        <param name='animate_transition' value='yes' />
+                        <param name='display_static_image' value='yes' />
+                        <param name='display_spinner' value='yes' />
+                        <param name='display_overlay' value='yes' />
+                        <param name='display_count' value='yes' />
+                        <param name='language' value='en-US' />
+                    </object>
+                </div>
+            </div>
+            <div class="wiki-box insights-section">
+                <h2>Data Insights & Analysis</h2>
+                <div class="insight-item">
+                    <h3>1. Event-Driven Traffic Spikes</h3>
+                    <p>Wikipedia traffic exhibits distinct patterns correlated with real-world events. Breaking news, celebrity announcements, and major world events trigger immediate traffic surges, with top articles receiving 3–50x their baseline traffic within hours of event occurrence.</p>
+                </div>
+                <div class="insight-item">
+                    <h3>2. Attention Decay Patterns</h3>
+                    <p>Public interest follows predictable decay curves: celebrity-related content decays over 3–4 weeks, political events over 1–2 weeks, and sports events over 1 week. Understanding these patterns enables resource optimization and content freshness strategies.</p>
+                </div>
+                <div class="insight-item">
+                    <h3>3. Category-Specific Trends</h3>
+                    <p>Entertainment and politics show higher spike volatility (average spike ratio 3.8–4.2x), while science and technology exhibit more stable traffic patterns (spike ratio 1.8–2.1x), indicating different user engagement models across content domains.</p>
+                </div>
+                <div class="insight-item">
+                    <h3>4. Wikipedia as Trust Layer</h3>
+                    <p>Traffic patterns reveal Wikipedia's role as a verification platform during uncertainty. Users bypass social media during breaking news to access peer-reviewed information, demonstrating Wikipedia's critical function in the information ecosystem.</p>
+                </div>
+            </div>
+            <div class="footer">Interactive dashboard powered by Tableau Public</div>
+        `,
+        callback: () => {
+            var divElement = document.getElementById('vizTopArticles');
+            var vizElement = divElement.getElementsByTagName('object')[0];
+            
+            if ( divElement.offsetWidth > 800 ) { 
+                vizElement.style.width='100%';
+                vizElement.style.height=(divElement.offsetWidth*0.75)+'px';
+            } else if ( divElement.offsetWidth > 500 ) { 
+                vizElement.style.width='100%';
+                vizElement.style.height=(divElement.offsetWidth*0.75)+'px';
+            } else { 
+                vizElement.style.width='100%';
+                vizElement.style.height='1400px';
+            }
+            
+            var scriptElement = document.createElement('script');
+            scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+            vizElement.parentNode.insertBefore(scriptElement, vizElement);
+        }
     }
 };
 
