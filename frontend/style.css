@@ -1,0 +1,192 @@
+/* Wikipedia Design System Tokens */
+:root {
+    --wp-blue: #36c;
+    --wp-blue-hover: #447ff5;
+    --wp-bg-light: #f8f9fa;
+    --wp-sidebar-bg: #f6f6f6;
+    --wp-border: #a2a9b1;
+    --wp-text-main: #202122;
+    --wp-text-sidebar: #54595d;
+    --wp-font-family: 'Linux Libertine', 'Georgia', 'Times', serif;
+    --wp-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Lato, Helvetica, Arial, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--wp-sans-serif);
+    background-color: white;
+    color: var(--wp-text-main);
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Sidebar Styling */
+#sidebar {
+    width: 176px;
+    background-color: var(--wp-sidebar-bg);
+    border-right: 1px solid var(--wp-border);
+    padding: 1rem 0.5rem;
+    flex-shrink: 0;
+}
+
+#logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2rem;
+    text-decoration: none;
+    color: var(--wp-text-main);
+}
+
+#logo img {
+    width: 120px;
+    height: auto;
+    margin-bottom: 0.5rem;
+}
+
+#logo span {
+    font-family: var(--wp-font-family);
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+
+.menu-group {
+    margin-bottom: 1.5rem;
+}
+
+.menu-group h3 {
+    font-size: 0.75rem;
+    color: var(--wp-text-sidebar);
+    text-transform: uppercase;
+    font-weight: normal;
+    padding: 0 0.5rem;
+    border-bottom: 1px solid #c8ccd1;
+    margin-bottom: 0.5rem;
+}
+
+.menu-item {
+    display: block;
+    padding: 0.3rem 0.5rem;
+    color: var(--wp-blue);
+    text-decoration: none;
+    font-size: 0.875rem;
+    cursor: pointer;
+}
+
+.menu-item:hover {
+    text-decoration: underline;
+}
+
+.menu-item.active {
+    color: var(--wp-text-main);
+    font-weight: bold;
+    cursor: default;
+    text-decoration: none;
+}
+
+/* Main Content Area */
+#content {
+    flex-grow: 1;
+    padding: 2.5rem 3rem;
+    background-color: white;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+header {
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid var(--wp-border);
+    padding-bottom: 0.5rem;
+}
+
+h1 {
+    font-family: var(--wp-font-family);
+    font-size: 1.8rem;
+    font-weight: 400;
+}
+
+.subtitle {
+    font-size: 0.8rem;
+    color: #54595d;
+    margin-top: 0.2rem;
+}
+
+/* Dashboard Wrapper */
+.dashboard-container {
+    margin-top: 2rem;
+}
+
+.tableauPlaceholder {
+    margin: 0 auto;
+}
+
+/* Report Gallery */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.report-card {
+    border: 1px solid var(--wp-border);
+    background-color: var(--wp-bg-light);
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.report-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-bottom: 1px solid var(--wp-border);
+}
+
+.report-info {
+    padding: 1rem;
+}
+
+.report-info h4 {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    color: var(--wp-text-main);
+}
+
+.report-info p {
+    font-size: 0.85rem;
+    color: #54595d;
+}
+
+/* Intro Section */
+.wiki-box {
+    background-color: #f8f9fa;
+    border: 1px solid #a2a9b1;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    border-left: 10px solid #36c;
+}
+
+.wiki-box p {
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid var(--wp-border);
+    margin: 2rem 0;
+}
+
+footer {
+    margin-top: 4rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--wp-border);
+    font-size: 0.75rem;
+    color: #54595d;
+    text-align: right;
+}
