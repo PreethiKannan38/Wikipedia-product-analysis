@@ -212,7 +212,97 @@ const contentData = {
             vizElement.parentNode.insertBefore(scriptElement, vizElement);
         }
     },
+ "studentSurveyAnalysis": {
+    title: "Wikipedia Student Survey Analysis",
+    subtitle: "Interactive Tableau dashboard on user behavior, trust, and feature opportunities",
+    html: `
+        <div class="dashboard-container">
+            <div class='tableauPlaceholder' id='viz1773943642688' style='position: relative'>
+                <noscript>
+                    <a href='#'>
+                        <img alt='Dashboard 1' src='https://public.tableau.com/static/images/Bo/Book1_17739433910390/Dashboard1/1_rss.png' style='border: none' />
+                    </a>
+                </noscript>
+                <object class='tableauViz' style='display:none;'>
+                    <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+                    <param name='embed_code_version' value='3' />
+                    <param name='site_root' value='' />
+                    <param name='name' value='Book1_17739433910390/Dashboard1' />
+                    <param name='tabs' value='no' />
+                    <param name='toolbar' value='yes' />
+                    <param name='static_image' value='https://public.tableau.com/static/images/Bo/Book1_17739433910390/Dashboard1/1.png' />
+                    <param name='animate_transition' value='yes' />
+                    <param name='display_static_image' value='yes' />
+                    <param name='display_spinner' value='yes' />
+                    <param name='display_overlay' value='yes' />
+                    <param name='display_count' value='yes' />
+                    <param name='language' value='en-US' />
+                    <param name='filter' value='publish=yes' />
+                </object>
+            </div>
+        </div>
 
+        <div class="wiki-box insights-section">
+            <h2>Data Insights & Analysis</h2>
+
+            <div class="insight-item">
+                <h3>1. Strong Shift Toward AI Tools</h3>
+                <p>
+                    The survey indicates a clear behavioral shift from traditional reference-based information seeking toward conversational AI tools. A large share of respondents report frequent AI usage, and the comparison heatmap shows that high AI use does not necessarily correspond with equally high Wikipedia use. This suggests that <strong>AI tools are increasingly becoming the first-stop interface for quick information access</strong>, especially when users prioritize speed and ease over deeper article-style reading.
+                </p>
+            </div>
+
+            <div class="insight-item">
+                <h3>2. Trust Is No Longer Wikipedia’s Exclusive Advantage</h3>
+                <p>
+                    Trust distribution shows that respondents are divided across Wikipedia, AI tools, and mixed trust positions such as “both equally.” This is significant because Wikipedia historically held a stronger perception of credibility for educational use. The dashboard suggests that <strong>AI tools are now competing not only on convenience, but also on perceived usefulness and trustworthiness</strong>, even if users remain aware of accuracy concerns.
+                </p>
+            </div>
+
+            <div class="insight-item">
+                <h3>3. Users Choose AI for Speed, Simplicity, and Interactivity</h3>
+                <p>
+                    The strongest reasons for preferring AI over Wikipedia are linked to <strong>faster answers, easier language, personalized explanations, and interactive conversation</strong>. This indicates that the competitive gap is not purely about information quality, but about <strong>experience design</strong>. Users increasingly prefer systems that reduce reading effort and adapt explanations to their needs, rather than expecting them to navigate long-form encyclopedia content independently.
+                </p>
+            </div>
+
+            <div class="insight-item">
+                <h3>4. Wikipedia’s Opportunity Lies in Product Redesign, Not Just Content</h3>
+                <p>
+                    The feature preference results provide a strong product signal: respondents show clear interest in AI-powered summaries, interactive Q&amp;A, chat-style explanations, multilingual support, and simplified student-friendly modes. This suggests that Wikipedia’s future relevance may depend less on expanding content volume and more on <strong>repackaging trusted knowledge into a more adaptive, assistive interface</strong>. In other words, users are not rejecting Wikipedia’s knowledge base; they are rejecting the friction involved in accessing it.
+                </p>
+            </div>
+
+            <div class="insight-item">
+                <h3>5. Strategic Implication</h3>
+                <p>
+                    Overall, the dashboard supports a clear conclusion: <strong>students are not moving away from knowledge-seeking, but away from static presentation formats</strong>. AI tools are winning because they feel faster, simpler, and more responsive. For Wikipedia, the strategic opportunity is to preserve its credibility advantage while integrating AI-native affordances such as summaries, conversational exploration, and guided explanations. This would allow Wikipedia to evolve from a passive reference destination into a more modern learning companion.
+                </p>
+            </div>
+        </div>
+
+        <div class="footer">Interactive dashboard powered by Tableau Public</div>
+    `,
+    callback: () => {
+        var divElement = document.getElementById('viz1773943642688');
+        var vizElement = divElement.getElementsByTagName('object')[0];
+
+        if (divElement.offsetWidth > 800) {
+            vizElement.style.width = '100%';
+            vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px';
+        } else if (divElement.offsetWidth > 500) {
+            vizElement.style.width = '100%';
+            vizElement.style.height = (divElement.offsetWidth * 0.75) + 'px';
+        } else {
+            vizElement.style.width = '100%';
+            vizElement.style.height = '3127px';
+        }
+
+        var scriptElement = document.createElement('script');
+        scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+        vizElement.parentNode.insertBefore(scriptElement, vizElement);
+    }
+},
 };
 
 function renderContent(key) {
