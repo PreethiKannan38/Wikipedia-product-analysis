@@ -176,6 +176,41 @@ h1 {
     margin-bottom: 1rem;
 }
 
+.insights-section {
+    margin-top: 3rem;
+    border-left: 10px solid var(--wp-blue);
+}
+
+.insights-section h2 {
+    font-family: var(--wp-font-family);
+    font-size: 1.5rem;
+    border-bottom: 1px solid var(--wp-border);
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.3rem;
+}
+
+.insight-item {
+    margin-bottom: 1.5rem;
+}
+
+.insight-item h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    color: var(--wp-text-main);
+    font-family: var(--wp-sans-serif);
+}
+
+.insight-item p, .insight-item li {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 0.5rem;
+}
+
+.insight-item ul {
+    margin-left: 1.5rem;
+    margin-bottom: 1rem;
+}
+
 hr {
     border: 0;
     border-top: 1px solid var(--wp-border);
